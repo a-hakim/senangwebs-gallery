@@ -1,4 +1,4 @@
-[![SenangWebs](https://raw.githubusercontent.com/a-hakim/senangwebs-animations/refs/heads/main/src/sw_banner.webp)](https://use.senangwebs.com)
+[![SenangWebs](https://raw.githubusercontent.com/a-hakim/senangwebs-gallery/refs/heads/main/src/sw_banner.webp)](https://use.senangwebs.com)
 Learn more at [SenangWebs.com](https://use.senangwebs.com)
 
 # SenangWebs Gallery (SWG)
