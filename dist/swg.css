@@ -1,0 +1,191 @@
+/*!*******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/swg.css ***!
+  \*******************************************************************/
+/* SenangWebs Gallery (SWG) - Styles
+   Version 1.3.0 */
+
+   .swg-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.swg-modal.active {
+    display: block;
+}
+
+.swg-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease-out;
+}
+
+.swg-modal.active .swg-modal-overlay {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+}
+
+.swg-modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swg-counter {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.swg-modal.active .swg-counter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.swg-image-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.swg-modal.active .swg-image-container {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.swg-modal-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.swg-modal.active .swg-modal-image {
+    opacity: 1;
+}
+
+.swg-modal-image.slide-left {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.swg-modal-image.slide-right {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.swg-close,
+.swg-prev,
+.swg-next {
+    position: absolute;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.swg-modal.active .swg-close,
+.swg-modal.active .swg-prev,
+.swg-modal.active .swg-next {
+    opacity: 1;
+}
+
+.swg-close {
+    top: 16px;
+    right: 16px;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease-out;
+}
+
+.swg-close:hover {
+    transform: rotate(90deg);
+}
+
+.swg-prev {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-16px);
+}
+
+.swg-next {
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%) translateX(16px);
+}
+
+.swg-modal.active .swg-prev {
+    transform: translateY(-50%) translateX(0);
+}
+
+.swg-modal.active .swg-next {
+    transform: translateY(-50%) translateX(0);
+}
+
+.swg-prev:hover,
+.swg-next:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.swg-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+}
+
+.swg-modal.active .swg-caption {
+    bottom: 0px;
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .swg-close,
+    .swg-prev,
+    .swg-next {
+        font-size: 20px;
+    }
+
+    .swg-image-container {
+        max-width: 95%;
+    }
+
+    .swg-counter {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
