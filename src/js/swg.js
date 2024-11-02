@@ -1,6 +1,3 @@
-// SenangWebs Gallery (SWG) - Lightweight Modal Image Gallery
-// Version 1.4.0
-
 class SenangWebsGallery {
     constructor(galleryElement) {
         this.gallery = galleryElement;

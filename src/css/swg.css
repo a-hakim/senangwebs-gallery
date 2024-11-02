@@ -1,7 +1,4 @@
-/* SenangWebs Gallery (SWG) - Styles
-   Version 1.3.0 */
-
-   .swg-modal {
+.swg-modal {
     display: none;
     position: fixed;
     top: 0;
@@ -26,7 +23,7 @@
 }
 
 .swg-modal.active .swg-modal-overlay {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
 }
 
@@ -147,9 +144,15 @@
     transform: translateY(-50%) translateX(0);
 }
 
+.swg-prev,
+.swg-next {
+    border-radius: 50%;
+}
+
 .swg-prev:hover,
 .swg-next:hover {
     transform: translateY(-50%) scale(1.1);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .swg-caption {
