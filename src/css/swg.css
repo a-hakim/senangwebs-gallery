@@ -96,7 +96,7 @@
 .swg-prev,
 .swg-next {
     position: absolute;
-    background: transparent;
+    background-color: rgba(0, 0, 0, 0.15);
     border: none;
     color: white;
     font-size: 24px;
@@ -118,6 +118,7 @@
     right: 16px;
     transform: rotate(0deg);
     transition: transform 0.2s ease-out;
+    border-radius: 50%;
 }
 
 .swg-close:hover {
