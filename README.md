@@ -1,6 +1,3 @@
-[![SenangWebs](https://raw.githubusercontent.com/a-hakim/senangwebs-gallery/refs/heads/main/src/sw_banner.webp)](https://use.senangwebs.com)
-Learn more at [SenangWebs.com](https://use.senangwebs.com)
-
 # SenangWebs Gallery (SWG)
 
 SenangWebs Gallery (SWG) is a lightweight JavaScript library that provides a modern, responsive modal image gallery with smooth transitions and intuitive navigation. With minimal setup, you can transform your image collections into an engaging gallery experience, complete with captions and keyboard controls.
