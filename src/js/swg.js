@@ -7,6 +7,8 @@ class SenangWebsGallery {
         this.modalImage = null;
         this.caption = null;
         this.counter = null;
+        this.prevButton = null;
+        this.nextButton = null;
         this.isOpen = false;
         this.isAnimating = false;
         this.showCounter = this.gallery.hasAttribute('data-swg-page');
@@ -63,6 +65,10 @@ class SenangWebsGallery {
         this.modalImage = modal.querySelector('.swg-modal-image');
         this.caption = modal.querySelector('.swg-caption');
         this.counter = modal.querySelector('.swg-counter');
+        this.prevButton = modal.querySelector('.swg-prev');
+        this.nextButton = modal.querySelector('.swg-next');
+        
+        this.updateButtonVisibility();
     }
 
     bindEvents() {
@@ -127,7 +133,7 @@ class SenangWebsGallery {
     }
 
     showPrevious() {
-        if (this.isAnimating) return;
+        if (this.isAnimating || this.items.length <= 1) return;
         this.animateSlide('right', () => {
             this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
             this.updateImage();
@@ -135,7 +141,7 @@ class SenangWebsGallery {
     }
 
     showNext() {
-        if (this.isAnimating) return;
+        if (this.isAnimating || this.items.length <= 1) return;
         this.animateSlide('left', () => {
             this.currentIndex = (this.currentIndex + 1) % this.items.length;
             this.updateImage();
@@ -171,6 +177,24 @@ class SenangWebsGallery {
         
         if (this.showCounter && this.counter) {
             this.counter.textContent = `${this.currentIndex + 1} / ${this.items.length}`;
+        }
+    }
+    
+    updateButtonVisibility() {
+        if (this.items.length <= 1) {
+            if (this.prevButton) {
+                this.prevButton.style.display = 'none';
+            }
+            if (this.nextButton) {
+                this.nextButton.style.display = 'none';
+            }
+        } else {
+            if (this.prevButton) {
+                this.prevButton.style.display = 'flex';
+            }
+            if (this.nextButton) {
+                this.nextButton.style.display = 'flex';
+            }
         }
     }
 }
