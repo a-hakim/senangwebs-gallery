@@ -200,11 +200,19 @@ class SenangWebsGallery {
 }
 
 // Initialize each gallery separately
-document.addEventListener('DOMContentLoaded', () => {
+function initGalleries() {
     document.querySelectorAll('[data-swg]').forEach(gallery => {
         new SenangWebsGallery(gallery);
     });
-});
+}
+
+// Handle both cases: script loaded before or after DOMContentLoaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGalleries);
+} else {
+    // DOM already loaded, initialize immediately
+    initGalleries();
+}
 
 // Export for module usage
 if (typeof module !== 'undefined' && module.exports) {
