@@ -156,22 +156,18 @@ class SenangWebsGallery {
     if (Math.abs(diff) < swipeThreshold) return;
 
     if (diff > 0) {
-      // Swiped left - show next
       this.showNext();
     } else {
-      // Swiped right - show previous
       this.showPrevious();
     }
   }
 
   destroy() {
-    // Remove keyboard event listener
     if (this.keydownHandler) {
       document.removeEventListener("keydown", this.keydownHandler);
       this.keydownHandler = null;
     }
 
-    // Remove modal from DOM
     if (this.modal && this.modal.parentNode) {
       this.modal.parentNode.removeChild(this.modal);
       this.modal = null;
@@ -223,27 +219,44 @@ class SenangWebsGallery {
 
   animateSlide(direction, callback) {
     this.isAnimating = true;
+
     this.modalImage.classList.add(`slide-${direction}`);
     this.modalImage.style.opacity = "0";
 
     setTimeout(() => {
       callback();
-      this.modalImage.classList.remove(`slide-${direction}`);
-
-      requestAnimationFrame(() => {
-        this.modalImage.style.opacity = "1";
-        this.isAnimating = false;
-      });
     }, 300);
   }
 
   updateImage() {
     const item = this.items[this.currentIndex];
 
-    // Show loader while image is loading
     if (this.loader) {
       this.loader.style.display = "block";
     }
+
+    this.modalImage.style.opacity = "0";
+
+    const onImageReady = () => {
+      if (this.loader) {
+        this.loader.style.display = "none";
+      }
+
+      this.modalImage.classList.remove("slide-left", "slide-right");
+
+      requestAnimationFrame(() => {
+        this.modalImage.style.opacity = "1";
+        this.isAnimating = false;
+      });
+    };
+
+    this.modalImage.onload = onImageReady;
+
+    this.modalImage.onerror = () => {
+      console.error("Failed to load image");
+      this.isAnimating = false;
+      if (this.loader) this.loader.style.display = "none";
+    };
 
     this.modalImage.src = item.src;
     this.modalImage.alt = item.alt || item.caption || "";
@@ -262,6 +275,20 @@ class SenangWebsGallery {
         this.items.length
       }`;
     }
+
+    this.preloadNeighbors();
+  }
+
+  preloadNeighbors() {
+    const nextIndex = (this.currentIndex + 1) % this.items.length;
+    const prevIndex =
+      (this.currentIndex - 1 + this.items.length) % this.items.length;
+
+    const preloadImg = new Image();
+    preloadImg.src = this.items[nextIndex].src;
+
+    const preloadImgPrev = new Image();
+    preloadImgPrev.src = this.items[prevIndex].src;
   }
 
   updateButtonVisibility() {
