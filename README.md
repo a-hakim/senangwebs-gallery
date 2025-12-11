@@ -2,6 +2,13 @@
 
 SenangWebs Gallery (SWG) is a lightweight JavaScript library that provides a modern, responsive modal image gallery with smooth transitions and intuitive navigation. With minimal setup, you can transform your image collections into an engaging gallery experience, complete with captions and keyboard controls.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+[![Built with SenangStart Icons](https://img.shields.io/badge/Built%20with-SenangStart%20Icons-2563EB.svg)](https://github.com/bookklik-technologies/senangstart-icons)
+
+| example 1                                                                                                     | example 2                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| ![SenangWebs Preview 1](https://raw.githubusercontent.com/a-hakim/senangwebs-gallery/master/swg_preview1.png) | ![SenangWebs Preview 2](https://raw.githubusercontent.com/a-hakim/senangwebs-gallery/master/swg_preview2.png) |
+
 ## Features
 
 - Easy to integrate with existing projects
@@ -118,11 +125,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-- Thanks to [senangstart-icons](https://www.npmjs.com/package/@bookklik/senangstart-icons) for the icons used in the gallery controls
-- Thanks to all contributors who have helped improve this library
 
 ## Support
 
