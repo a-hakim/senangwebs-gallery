@@ -28,7 +28,10 @@ npm install senangwebs-gallery
 You can include SenangWebs Gallery directly in your HTML file using unpkg:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/senangwebs-gallery@latest/dist/swg.css">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/senangwebs-gallery@latest/dist/swg.css"
+/>
 <script src="https://unpkg.com/senangwebs-gallery@latest/dist/swg.js"></script>
 ```
 
@@ -38,11 +41,14 @@ You can include SenangWebs Gallery directly in your HTML file using unpkg:
 
 ```html
 <!-- If installed via npm -->
-<link rel="stylesheet" href="path/to/swg.css">
+<link rel="stylesheet" href="path/to/swg.css" />
 <script src="path/to/swg.js"></script>
 
 <!-- Or if using unpkg -->
-<link rel="stylesheet" href="https://unpkg.com/senangwebs-gallery@latest/dist/swg.css">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/senangwebs-gallery@latest/dist/swg.css"
+/>
 <script src="https://unpkg.com/senangwebs-gallery@latest/dist/swg.js"></script>
 ```
 
@@ -50,15 +56,15 @@ You can include SenangWebs Gallery directly in your HTML file using unpkg:
 
 ```html
 <div data-swg data-swg-page>
-    <div data-swg-item data-swg-caption="Beautiful sunset">
-        <img src="path/to/image1.jpg" alt="Sunset">
-    </div>
-    <div data-swg-item data-swg-caption="Mountain view">
-        <img src="path/to/image2.jpg" alt="Mountain">
-    </div>
-    <div data-swg-item data-swg-caption="Ocean waves">
-        <img src="path/to/image3.jpg" alt="Ocean">
-    </div>
+  <div data-swg-item data-swg-caption="Beautiful sunset">
+    <img src="path/to/image1.jpg" alt="Sunset" />
+  </div>
+  <div data-swg-item data-swg-caption="Mountain view">
+    <img src="path/to/image2.jpg" alt="Mountain" />
+  </div>
+  <div data-swg-item data-swg-caption="Ocean waves">
+    <img src="path/to/image3.jpg" alt="Ocean" />
+  </div>
 </div>
 ```
 
@@ -115,7 +121,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Thanks to Font Awesome for the icons used in the gallery controls
+- Thanks to [senangstart-icons](https://www.npmjs.com/package/@bookklik/senangstart-icons) for the icons used in the gallery controls
 - Thanks to all contributors who have helped improve this library
 
 ## Support
