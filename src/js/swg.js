@@ -1,5 +1,3 @@
-import "@bookklik/senangstart-icons/dist/senangstart-icon.min.js";
-
 class SenangWebsGallery {
   constructor(galleryElement) {
     this.gallery = galleryElement;
@@ -47,6 +45,7 @@ class SenangWebsGallery {
   }
 
   createModal() {
+    const icons = require('@bookklik/senangstart-icons/icons');
     const modal = document.createElement("div");
     modal.className = "swg-modal";
     modal.innerHTML = `
@@ -54,13 +53,13 @@ class SenangWebsGallery {
             <div class="swg-modal-content">
                 ${this.showCounter ? '<div class="swg-counter"></div>' : ""}
                 <button class="swg-close">
-                    <ss-icon icon="x-mark" thickness="2.2"></ss-icon>
+                    ${icons['x-mark']}
                 </button>
                 <button class="swg-prev">
-                    <ss-icon icon="arrow-left" thickness="2.2"></ss-icon>
+                    ${icons['arrow-left']}
                 </button>
                 <button class="swg-next">
-                    <ss-icon icon="arrow-right" thickness="2.2"></ss-icon>
+                    ${icons['arrow-right']}
                 </button>
                 <div class="swg-image-container">
                     <div class="swg-loader"></div>
