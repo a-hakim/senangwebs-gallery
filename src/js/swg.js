@@ -312,7 +312,10 @@ class SenangWebsGallery {
 // Initialize each gallery separately
 function initGalleries() {
   document.querySelectorAll("[data-swg]").forEach((gallery) => {
-    new SenangWebsGallery(gallery);
+    if (!gallery.hasAttribute('data-swg-initialized')) {
+      new SenangWebsGallery(gallery);
+      gallery.setAttribute('data-swg-initialized', 'true');
+    }
   });
 }
 
@@ -323,6 +326,10 @@ if (document.readyState === "loading") {
   // DOM already loaded, initialize immediately
   initGalleries();
 }
+
+// Support for SPA navigation like Livewire and Turbo
+document.addEventListener("livewire:navigated", initGalleries);
+document.addEventListener("turbo:load", initGalleries);
 
 // Export for module usage
 if (typeof module !== "undefined" && module.exports) {
